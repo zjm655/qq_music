@@ -26,12 +26,14 @@
                         </div>
                     </div>
                     <div class="H_box3">
-                        <form action="">
-                        <input type="text" class="H_input" placeholder="搜索音乐、MV、歌单、用户" name="srech">
-                        <button class="buttonM">
-                            <img src="./imagin/ser.png" alt="搜索" width="25px" class="img">
-                        </button>
+                        <form action="" id="Df">
+                        <div class="shousuo">
+                            <input type="text" class="H_input" placeholder="搜索音乐、MV、歌单、用户" name="srech" id="srech">
+                            <button class="buttonM">
+                                <span class="ser"></span>
+                            </button>
                         </form>
+                        </div>
                     </div>
                     <div class="H_box4">
                         <div class="Hbox4one">
@@ -60,8 +62,6 @@
                     </div>
                 </div>
                 <div class="H_box_content2">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="" class="fontT" >首页</a>
                     <a href="" class="fontT">歌手</a>
                     <a href="" class="fontT">新碟</a>
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                         
-                        <div style="text-align: center;">
+                        <div class="BB14">
                             <span class="AA9 T1" id="img1"></span>
                             <span class="AA9" id="img2"></span>
                             <span class="AA9" id="img3"></span>
@@ -138,7 +138,8 @@
                         <h2 class="AA1 BB2">新歌首发</h2>
                         <div class="BB3">
                             <button class="BB4">
-                                <span class="BB5">▶</span>播放全部
+                                <span class="BB5">|</span>
+                                播放全部
                             </button>
                             <div class="AA2">
                                 <a href="" class="AA3" style="color: #31c27c;">最新</a>
@@ -427,6 +428,7 @@
         this.ver = x8;
         this.srcp = x9;
         this.spanp = [];
+        this.charp = x1;
     }
     function Themethod(X1,X2,X3){
         this.num1 = X1;
@@ -456,13 +458,21 @@
             if(carousel.godown.length > 2)carousel.cont3[k].innerHTML=carousel.godown[2][carousel.ver][k];
         }
     }
-    
-    function chage(carousel,start){
+        
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+    }    
+
+    async function chage(carousel,start){
         carousel.spanp[carousel.ver].className="AA9 T1";
         let i,end=carousel.srcp + (carousel.ver+1);
-        for(i=0;i<carousel.img.length;i++){
-            carousel.img[i].src=carousel.img[i].src.replace(start,end);
-        }
+        
+        for(i=0;i<carousel.img.length;i++)carousel.img[i].className=carousel.charp+" T3";
+        await sleep(450);
+        for(i=0;i<carousel.img.length;i++)carousel.img[i].className=carousel.charp;
+        for(i=0;i<carousel.img.length;i++)carousel.img[i].src=carousel.img[i].src.replace(start,end);
+        await sleep(15);
+        
         vary(carousel);
     }
     

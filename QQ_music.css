@@ -11,9 +11,12 @@ body {
     height: 100%;
 }
 .head {
+    gap: 20px;
     height: 142px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .H_box_content1 {
     margin: 0 auto;
@@ -22,11 +25,13 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .H_box1 {
     display: inline-block;
     width: 170px;
     cursor: pointer;
+    /* display: flex; */
 }
 .H_box2 {
     margin-left: 32px;
@@ -63,7 +68,8 @@ body {
 }
 .H_box3 {
     width: 240px;
-    height: 64px;
+    height: 72px;
+    background-color: transparent;
 }
 .H_box4 {
     width: 263px;
@@ -74,17 +80,25 @@ body {
 .H_input {
     margin-top: 10px;
     height: 36px;
-    width: 174px;
+    width: 187px;
+    font-size: 15px;
+}
+.H_input:focus {
+    outline: none; /* 必加：去掉弹出的默认轮廓 */
+  /* 可选：焦点时边框高亮，提升交互感（替代默认outline） */
+  /* border-color: #66afe9; */
+  /* 可选：轻微阴影，更精致 */
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }
 .buttonM {
 
-    height: 42px;
-    transform: translateX(-6px);
-    margin-top: 10px;
-    border: 1px solid rgb(118,118,118); 
-    background-color: rgb(255,255,255);
-    border-left: 1px solid rgb(255,255,255); 
-    transform: translate(-6.1px,6.1px);
+    /* height: 42px; */
+    /* transform: translateX(-6px); */
+    /* margin-top: 10px; */
+    border: 0px solid rgb(118,118,118); 
+    background-color: transparent;
+    /* border-left: 1px solid rgb(255,255,255); 
+    transform: translate(-6.1px,6.1px); */
 }
 .Hbox4one {
     display: inline-block;
@@ -139,10 +153,11 @@ body {
 }
 .H_box_content2 {
     width: 1020px;
-    height: 51px;
-    display: inline-block;
-    margin: 0 auto;
-    margin-top: 20px;
+    /* height: 20px; */
+    display: flex;
+    justify-content: center;
+    /* margin-top: 20px; */
+    margin-bottom: 12px;
 }
 .footer {
     height: 710px;
@@ -170,11 +185,15 @@ body {
 .F {
     height: 100%;
     width: 400px;
+    display: flex;
+    flex-direction: column;
 }
 .a1 {
     width: 100%; 
     box-sizing: border-box; 
     margin-bottom: 130px;
+    display: flex;
+    flex-direction: column;
 }
 .a2 {
     margin-left: 20px;
@@ -202,10 +221,12 @@ body {
     list-style: none; 
     padding: 0; 
     margin: 0; 
-    margin-left: -55px;
+    /* margin-left: -55px; */
     display: flex; 
-    justify-content: center;
+    /* justify-content: center; */
     gap: 40px; flex-wrap: nowrap;
+    align-items: center;
+    flex: 1;
 }
 .A1 {
     display: block;
@@ -281,14 +302,17 @@ body {
     margin: 20px 0; color: #333;
 }  
 .AA2 {
-    margin-right: 275px;
-    text-align: center; 
+    /* margin-right: 275px; */
+    margin: 0 auto;
+    /* text-align: center;  */
     font-size: 16px; 
 }
 .AA2_cpy {
-    text-align: center; 
+    /* text-align: center;  */
     font-size: 16px; 
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }
 .AA3 {
     color: #666; 
@@ -310,6 +334,7 @@ body {
     height: 210px; 
     object-fit: cover;
     cursor: pointer;
+    /* transform: scale(1.2); */
 }
 .AA7 {
     font-size: 14px; 
@@ -370,10 +395,36 @@ body {
     cursor: pointer; 
     display: flex; 
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .BB5 {
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    font-size: 15px;
+    color: rgb(153,153,153,1);
+    position: relative;
+    
+    margin: 12px;
+    display: inline-block;
+}
+.BB5::before {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background-color: rgb(153,153,153,0.9);
+    position: absolute;
+    transform: rotate(45deg);
+     top: 4px;
+    left: 0px;
+}
+.BB5::after {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background-color: rgb(153,153,153,0.9);
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 13px;
+    left: 0px;
 }
 .BB6 {
     display: flex; 
@@ -388,6 +439,8 @@ body {
     padding-bottom: 15px; 
     border-bottom: 1px solid #eee;
     cursor: pointer;
+    width: 324px;
+    height: 76px;
 }
 .BB8 {
     width: 60px;
@@ -435,7 +488,7 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: all 0.3s;
 }
-.BB4:hover ,.BB10:hover ,.BB11:hover ,.buttonM:hover {
+.BB4:hover ,.BB10:hover ,.BB11:hover {
   background-color: #f5f5f5;
   border-color: #31c27c;
   color: #31c27c;
@@ -445,8 +498,18 @@ body {
   color: #31c27c;
   transition: color 0.3s;
 }
-.img:hover {
+.buttonM:hover,.img:hover {
     cursor: pointer;
+}
+.ser:hover::after {
+    background-color: #31c27c;
+    transition: all 0.2s;
+}
+.ser:hover {
+    cursor: pointer;
+    color: #31c27c;
+    transition: all 0.2s;
+    border: #31c27c 2px solid;
 }
 .AA9:hover {
     background-color: #999;
@@ -454,7 +517,7 @@ body {
     cursor: pointer;
 }
 .T1 {
-    background: #31c27c;
+    background: #999;
 }
 .Right {
     width: 79px;
@@ -517,4 +580,50 @@ body {
         transform: rotate(-45deg);
         top: 63px;
         right: 15px;
+}
+.T3 {
+    transform: scale(0.5) rotate(730deg) ;
+    opacity: 0.6;
+    transition: all 0.35s;
+    /* transform: scale(1.1) rotate(0deg) ; */
+}
+.ser {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    /* background-color: #999; */
+    border-radius: 50%;
+    /* border-color: #999; */
+    border: 2px #999 solid;
+    position: relative;
+        }
+.ser::after {
+    content: "";
+    width: 10px;
+    height: 2px;
+    background-color: #999;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+#srech {
+    border: 0px blanchedalmond solid;
+    /* text-align: center; */
+    margin-bottom: 7px;
+}
+.shousuo {
+    margin-top: 15px;
+    display: flex;
+    border: rgb(201,201,201) solid 1px;
+    align-items: center;
+    width: 221px;
+    height: 40px;
+    /* margin-top: 10px; */
+}
+#Df {
+    display: inline-block;
+    height: 60px;
+    overflow: hidden;
 }
