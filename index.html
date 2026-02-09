@@ -226,7 +226,7 @@
                             <div class="BB7">
                                 <div class="f_box">
                                     <img src="./img_1/a23.webp" alt="歌曲封面" class="BB8">
-                                     <div class=""></div>
+                                    <div class=""></div>
                                 </div>
                                 <div class="BB9">
                                     <p class="BB10">齐天大圣</p>
@@ -551,7 +551,7 @@
     }
 
         function shadeseen(carousel,n,ch){
-            carousel.img[n].addEventListener('mouseenter',
+            carousel.img[n].parentElement.addEventListener('mouseenter',
                 function(){
                     carousel.img[n].nextElementSibling.className="e_box "+ch;
                     carousel.img[n].className=carousel.charp+" g";
@@ -560,7 +560,7 @@
         }
 
         function shadeleave(carousel,n){
-            carousel.img[n].nextElementSibling.addEventListener('mouseleave',
+            carousel.img[n].parentElement.addEventListener('mouseleave',
                 function(){
                     carousel.img[n].nextElementSibling.className="";
                     carousel.img[n].className=carousel.charp;
@@ -569,9 +569,7 @@
         }
 
     for(let i=0;i<carouseltop.img.length;i++){shadeseen(carouseltop,i,"eTop");shadeleave(carouseltop,i);}
-    for(let i=0;i<carouselbotton.img.length;i++){
-        shadeseen(carouselbotton,i,"eBottom");shadeleave(carouselbotton,i);
-    }
+    for(let i=0;i<carouselbotton.img.length;i++){shadeseen(carouselbotton,i,"eBottom");shadeleave(carouselbotton,i);}
     
     seen(carouseltop);leave(carouseltop);
     seen(carouselbotton);leave(carouselbotton);
