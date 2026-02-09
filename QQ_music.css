@@ -444,12 +444,13 @@ body {
     cursor: pointer;
     width: 324px;
     height: 76px;
+    gap: 10px;
 }
 .BB8 {
     width: 60px;
     height: 60px; 
     object-fit: cover; 
-    margin-right: 15px;
+    /* margin-right: 15px; */
     cursor: pointer;
 }
 .BB9 {
@@ -477,6 +478,7 @@ body {
     align-items: center; 
     padding-bottom: 15px;
     cursor: pointer;
+    gap: 10px;
 }
 .BB14 {
     text-align: center; 
@@ -486,7 +488,8 @@ body {
     text-align: center; 
     margin-bottom: -5px;
 }
-.AA6:hover, .BB8:hover {
+.AA6:hover,
+ .BB8:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: all 0.3s;
@@ -528,6 +531,7 @@ body {
      background-color: rgb(236,236,236);
      cursor: pointer;
      position: relative;
+     transition: all 0.5s;
 }
 .shape {
     width: 79px;
@@ -539,6 +543,7 @@ body {
      background-color: rgb(236,236,236);
      cursor: pointer;
      position: relative;
+     transition: all 0.5s;
 }
 .Left:hover {
     background-color: rgb(225,225,225);
@@ -547,6 +552,7 @@ body {
 .Right:hover {
     background-color: rgb(225,225,225);
     transition: all 0s;
+    
 }
 .Left::before {
     content: "";
@@ -557,6 +563,7 @@ body {
     transform: rotate(45deg);
     top: 63px;
     left: 15px;
+    transition: all 0.5s;
 }
 .Left::after {
     content: "";
@@ -567,6 +574,7 @@ body {
     transform: rotate(-45deg);
     top: 42px;
     left: 15px;
+    transition: all 0.5s;
 }
 .Right::before{
         content: "";
@@ -577,6 +585,7 @@ body {
         transform: rotate(45deg);
         top: 42px;
         right: 15px;
+        transition: all 0.5s;
        }
 .Right::after{
         content: "";
@@ -587,6 +596,7 @@ body {
         transform: rotate(-45deg);
         top: 63px;
         right: 15px;
+        transition: all 0.5s;
 }
 .T3 {
     transform: scale(1.05) rotate(0deg) ;
@@ -624,7 +634,7 @@ body {
 .shousuo {
     margin-top: 15px;
     display: flex;
-    border: rgb(201,201,201) solid 1px;
+    border: rgb(201,201,201) solid 3px;
     align-items: center;
     width: 221px;
     height: 40px;
@@ -638,4 +648,76 @@ body {
 .T2 {
     background-color: rgb(236,236,236);
     /* position: relative; */
+}
+.f_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.e_box {
+    position: absolute;
+    background-color: rgba(1,1,1, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: scale(1.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s;
+}
+.eTop {
+    width: 210px;
+    height: 210px;
+    transition: all 0.1s;
+}
+.eBottom {
+    width: 60px;
+    height: 60px;
+    transition: all 0.1s;
+}
+.e_box::before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    border: #ffffff solid 2px;
+    background-color: #ffffff;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+.eTop::before {
+    width: 50px;
+    height: 50px;
+    transition: all 0.1s;
+}
+.eBottom::before {
+    width: 17px;
+    height: 17px;
+    transition: all 0.1s;
+}
+.e_box::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    transition: all 0.1s;
+}
+.eTop::after {
+    border-top: 15px transparent solid;
+    border-bottom: 15px transparent solid;
+    border-left: 20px rgb(118,118,118) solid;
+    left: 98px;
+    transition: all 0.1s;
+}
+.eBottom::after {
+    border-top: 6px transparent solid;
+    border-bottom: 6px transparent solid;
+    border-left: 8px rgb(118,118,118) solid;
+    left: 27px;
+    transition: all 0.1s;
+}
+.g {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+
 }
