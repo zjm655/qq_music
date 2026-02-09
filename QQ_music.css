@@ -126,6 +126,7 @@ body {
     width: 40px;
 }
 .opt {
+    border: 0px solid beige;
     margin-left: 10px;
     display: inline-block;
     width: 102px;
@@ -296,10 +297,12 @@ body {
     height: 566px;
 }     
 .AA1 {
+    font-family: poppin;
     text-align: center; 
     font-size: 28px; 
-    font-weight: 400; 
-    margin: 20px 0; color: #333;
+    font-weight: 500; 
+    margin: 20px 0; 
+    color: #333;
 }  
 .AA2 {
     /* margin-right: 275px; */
@@ -526,6 +529,10 @@ body {
      cursor: pointer;
      position: relative;
 }
+.shape {
+    width: 79px;
+    height: 108px;
+}
 .Left {
     width: 79px;
     height: 108px;
@@ -582,9 +589,10 @@ body {
         right: 15px;
 }
 .T3 {
-    transform: scale(0.5) rotate(730deg) ;
+    transform: scale(1.05) rotate(0deg) ;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     opacity: 0.6;
-    transition: all 0.35s;
+    transition: all 0.15s;
     /* transform: scale(1.1) rotate(0deg) ; */
 }
 .ser {
@@ -626,4 +634,8 @@ body {
     display: inline-block;
     height: 60px;
     overflow: hidden;
+}
+.T2 {
+    background-color: rgb(236,236,236);
+    /* position: relative; */
 }

@@ -53,7 +53,7 @@
                         <div class="Hbox4three">
                             <div class="head4"></div>
                             <div class="fatherflex">
-                                <select name="" id="" class="cz">
+                                <select name="cz" id="c" class="cz">
                                     <option value="简称"></option>
                                     <option value="简称" selected class="first">充值</option>
                                 </select>
@@ -76,7 +76,7 @@
             <div class="content">
 
                 <div class="AA10">
-                    <div id="left" class="Left"></div>
+                    <div id="left" class="shape"></div>
                     <div class="content1">
                         
                     <div class="ONE">
@@ -128,11 +128,11 @@
                     
                     
                 </div>
-                <div id="right" class="Right"></div>
+                <div id="right" class="shape"></div>
                 </div>
 
                 <div class="AA11">
-                    <div id="left2" class="Left"></div>
+                    <div id="left2" class="shape"></div>
                     <div class="content2">
                     <div class="TWO BB1">
                         <h2 class="AA1 BB2">新歌首发</h2>
@@ -241,7 +241,7 @@
                         </div>
                     </div>                   
                 </div>
-                <div id="right2" class="Right"></div>
+                <div id="right2" class="shape"></div>
                 </div>
 
             </div>
@@ -417,23 +417,21 @@
 </body>
 </html>
 <script>
-    function Carousel(x1,x2,x3,x4,x5,x6,x7,x8,x9){
+    function Carousel(x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12){
         this.img = document.getElementsByClassName(x1);
         this.right = document.getElementById(x2);
         this.left = document.getElementById(x3);
-        this.cont1 = document.getElementsByClassName(x4);
-        this.cont2 = document.getElementsByClassName(x5);
-        this.cont3 = document.getElementsByClassName(x6);
+        this.cont = [];
+        this.spanp = [];
+        this.cont = [ document.getElementsByClassName(x4) , document.getElementsByClassName(x5) , document.getElementsByClassName(x6) ];
         this.godown = x7;
         this.ver = x8;
         this.srcp = x9;
-        this.spanp = [];
         this.charp = x1;
-    }
-    function Themethod(X1,X2,X3){
-        this.num1 = X1;
-        this.num2 = X2;
-        this.directionp = X3;
+        this.num = x10;
+        this.stringp = x11;
+        for(let i=0;i<this.num;i++)this.spanp[i] = document.getElementById(this.stringp + (i+1));
+        this.target = document.getElementsByClassName(x12);
     }
     
     let godown = [[["抖音伤感热播，我们还是走散了","抖音超热曲，左耳陪伴，右耳寻欢","汪苏泷：一小段一小段把歌唱完","开口即惊艳！好评如潮的神仙歌曲","短视频装不下的表达欲，音乐加持"],["风靡全网！抖音最火中文歌大放送","抖音 DJ 集丨一脚油门 200 迈","动感车载 DJ 🔥gogogo 出发咯！","纪念方大同：我们耳机里特别的人","抖音热歌：全网爆火最流行"],["一听就落泪！哪首是 emo 天花板","1005_檀健次生日快乐","张杰「开往 1982」巡回演唱会","Clockenflap2025 独家阵容歌单！","袁一琦私藏丨假日悠闲生活"],["你不碰爱情，哪懂白月光的杀伤力","纪念于朦胧丨朦胧之境的光影旋律","华语流行天王・周杰伦出道25周年","抖音最火：超好听的热门 BGM","时代少年团「加冠礼」海口演唱会"],["抖音热歌：100% 火爆全网","抖音最火：单曲循环的热门歌曲","祝千玺生日快乐！一人一首祝福！","抖音车载 DJ：夜驾不犯困","抖音热歌：全网流行超好听"]],
@@ -442,20 +440,14 @@
     [["GAI 周延", "白鹿", "早安", "赵传", "张远 / 和平精英", "南征北战 NZBZ", "邓寓君 (等什么君)", "周深", "袁娅维 TIA RAY"],["TF_ING 张子墨", "Taylor Swift", "刘宇", "希林娜依高", "蒲熠星", "袁娅维 TIA RAY", "王者荣耀 / 刘宇宁", "Charlie Puth/Kenny G", "蒋敦豪"],["马嘉祺", "Desire4 / 黄星 / 邱鼎杰", "黄霄雲", "彭楚粤", "鸣潮先约电台 /jixwang", "Terry Zhong 钟天利 / COLD", "阿杜", "刘宇宁", "恋与深空 / 蔡明希 - 不才"],["浅影阿 / 汐音社", "金润吉", "Uu (刘梦妤)", "VKNOW 感觉团 / 木秦", "陈默之", "高睿", "树莓乐队", "张大伟", "糖心蛋"],["ONER", "派克特 /seaLANG", "龙族・卡塞尔之门", "余宇涵", "TF_ING 邓佳鑫", "薛凯琪 / 刘恋", "黄子弘凡 / 于冬然", "吴克群 / 欢子", "张信哲 / 高睿"],["Jeffrey 董又霖", "JC 陈咏桐", "黄妃", "黎瑞恩", "HowZ", "毕书尽 / 徐靖翔", "大象体操 / Mei Semones", "林俊杰 / 王者荣耀", "卢广仲"],["张韶涵", "郭静", "周杰伦 / 言承旭 / 吴建豪", "G.E.M. 邓紫棋", "王力宏 / 单依纯", "BY2", "颜人中", "言承旭 / 五月天 阿信", "刘德华"],["陈奕迅", "蔡旻佑", "MC 张天赋", "韦礼安", "蔡健雅", "告五人", "陈小春", "Tyson Yoshi / 张敬轩", "欧阳娜娜"],["南拳妈妈", "侧田", "孙盛希", "五月天 阿信 / 刘若英", "周柏豪", "杨千嬅", "Karenciici", "Sunny Lukas", "杨丞琳"]],
     [["03:34", "04:25", "03:45", "04:32", "03:02", "03:10", "04:14", "04:13", "03:36"],["03:51", "03:55", "04:45", "03:49", "03:35", "02:51", "03:52", "03:07", "03:40"],["02:47", "04:02", "03:50", "04:00", "04:01", "02:56", "04:22", "04:25", "05:31"],["03:46", "03:20", "03:33", "03:15", "03:29", "03:27", "02:55", "04:17", "03:08"],["02:56", "03:09", "03:00", "02:56", "03:37", "04:52", "04:10", "04:06", "04:27"],["03:27", "03:33", "04:23", "03:56", "03:27", "04:15", "03:33", "04:44", "04:22"],["04:53", "02:41", "04:47", "04:45", "04:12", "03:40", "04:00", "03:43", "04:21"],["03:41", "04:19", "03:46", "04:40", "05:38", "03:52", "03:22", "03:11", "03:19"],["04:26", "02:01", "03:10", "04:07", "04:28", "03:53", "02:40", "02:20", "03:57"]]];
     
-    let carouseltop = new Carousel("AA6","right","left","AA7","AA8","AA8",godown,0,"imgtwo_");
-    let carouselbotton = new Carousel("BB8","right2","left2","BB10","BB11","BB12",godown2,0,"img_");
-    let method1 = new Themethod(1,5,carouseltop.right),method2 =new Themethod(4,5,carouseltop.left),method3 = new Themethod(1,9,carouselbotton.right),method4 = new Themethod(8,9,carouselbotton.left);
+    let carouseltop = new Carousel("AA6","right","left","AA7","AA8","AA8",godown,0,"imgtwo_",5,"img","AA10");
+    let carouselbotton = new Carousel("BB8","right2","left2","BB10","BB11","BB12",godown2,0,"img_",9,"imgin","AA11");
     let i,k;
-    
-    for(i=0;i<5;i++)carouseltop.spanp[i] = document.getElementById('img' + (i+1));
-    for(i=0;i<9;i++)carouselbotton.spanp[i] = document.getElementById('imgin' + (i+1));
     
     function vary(carousel){
         let k;
         for(k=0;k<carousel.godown[0][0].length;k++){
-            carousel.cont1[k].innerHTML=carousel.godown[0][carousel.ver][k];
-            carousel.cont2[k].innerHTML=carousel.godown[1][carousel.ver][k];
-            if(carousel.godown.length > 2)carousel.cont3[k].innerHTML=carousel.godown[2][carousel.ver][k];
+            for(let t=0;t<carousel.godown.length;t++)carousel.cont[t][k].innerHTML=carousel.godown[t][carousel.ver][k];
         }
     }
         
@@ -468,10 +460,10 @@
         let i,end=carousel.srcp + (carousel.ver+1);
         
         for(i=0;i<carousel.img.length;i++)carousel.img[i].className=carousel.charp+" T3";
-        await sleep(450);
+        await sleep(300);
         for(i=0;i<carousel.img.length;i++)carousel.img[i].className=carousel.charp;
         for(i=0;i<carousel.img.length;i++)carousel.img[i].src=carousel.img[i].src.replace(start,end);
-        await sleep(15);
+        await sleep(10);
         
         vary(carousel);
     }
@@ -486,18 +478,37 @@
         }
     }
 
-    function skip(carousel,X){
-        X.directionp.onclick = function(){
+    function skip(carousel,X1,X2){
+        X1.onclick = function(){
         let start=carousel.srcp + (carousel.ver+1);
         carousel.spanp[carousel.ver].className="AA9";
-        carousel.ver=(carousel.ver+X.num1)%X.num2;
+        carousel.ver=(carousel.ver+X2)%carousel.num;
         chage(carousel,start);
     }
     }
 
+    function seen(carousel){
+        carousel.target[0].addEventListener('mouseenter',
+            function(){
+                carousel.right.className="Right shape";
+                carousel.left.className="Left shape";
+            }
+        )
+    }
+
+    function leave(carousel){
+        carousel.target[0].addEventListener('mouseleave',
+            function(){
+                carousel.right.className="shape";
+                carousel.left.className="shape";
+            }
+        )
+    }
+    seen(carouseltop);leave(carouseltop);
+    seen(carouselbotton);leave(carouselbotton);
     click(0,carouseltop);click(1,carouseltop);click(2,carouseltop);click(3,carouseltop);click(4,carouseltop);
-    skip(carouseltop,method1);skip(carouseltop,method2);
+    skip(carouseltop,carouseltop.right,1);skip(carouseltop,carouseltop.left,4);
     click(0,carouselbotton);click(1,carouselbotton);click(2,carouselbotton);click(3,carouselbotton);click(4,carouselbotton);click(5,carouselbotton);click(6,carouselbotton);click(7,carouselbotton);click(8,carouselbotton);
-    skip(carouselbotton,method3);skip(carouselbotton,method4);
+    skip(carouselbotton,carouselbotton.right,1);skip(carouselbotton,carouselbotton.left,8);
 </script>
     
