@@ -175,6 +175,7 @@ body {
     padding-bottom: 45px;
     margin-bottom: 1px;
     display: flex;
+    gap: 30px;
 }
 .f2 {
     width: 1200px;
@@ -255,12 +256,6 @@ body {
 }
 .C2 > a:nth-of-type(-n+3) {
     margin-top: 0px;
-}
-.F2 {
-    transform: translateX(55px);
-}
-.F3 {
-    transform: translateX(60px);
 }
 .f2 {
     font-size: 12px;
