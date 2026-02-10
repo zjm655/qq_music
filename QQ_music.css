@@ -26,6 +26,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: rgb(242,242,242) 3px solid;
 }
 .H_box1 {
     display: inline-block;
@@ -84,10 +85,7 @@ body {
     font-size: 15px;
 }
 .H_input:focus {
-    outline: none; /* 必加：去掉弹出的默认轮廓 */
-  /* 可选：焦点时边框高亮，提升交互感（替代默认outline） */
-  /* border-color: #66afe9; */
-  /* 可选：轻微阴影，更精致 */
+    outline: none; 
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }
 .buttonM {
@@ -655,6 +653,7 @@ body {
     align-items: center;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
 }
 .e_box {
     position: absolute;
@@ -664,17 +663,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .eTop {
     width: 210px;
     height: 210px;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .eBottom {
     width: 60px;
     height: 60px;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .e_box::before {
     content: "";
@@ -682,42 +681,41 @@ body {
     border-radius: 50%;
     border: #ffffff solid 2px;
     background-color: #ffffff;
-    transition: all 0.1s;
+    transition: all 0.2s;
     cursor: pointer;
 }
 .eTop::before {
     width: 50px;
     height: 50px;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .eBottom::before {
     width: 17px;
     height: 17px;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .e_box::after {
     content: "";
     display: inline-block;
     position: absolute;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .eTop::after {
     border-top: 15px transparent solid;
     border-bottom: 15px transparent solid;
     border-left: 20px rgb(118,118,118) solid;
     left: 98px;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .eBottom::after {
     border-top: 6px transparent solid;
     border-bottom: 6px transparent solid;
     border-left: 8px rgb(118,118,118) solid;
     left: 27px;
-    transition: all 0.1s;
+    transition: all 0.2s;
 }
 .g {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-
+    transition: all 0.5s;
 }
