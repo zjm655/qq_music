@@ -1,6 +1,12 @@
 body {
      font-family: Tahoma, Arial, \5FAE\8F6F\96C5\9ED1, sans-serif;
 }
+h2 {
+    font-family: poppin;
+    font-size: 32px;
+    font-weight: 550;
+    letter-spacing: 6px;
+}
 .contName {
     width: 1200px;
     text-align: center;
@@ -18,7 +24,8 @@ body {
     color: rgb(49, 194, 124);
 }
 .contguide > a {
-    font-size: 16px;
+    font-size: 15px;
+    color: #333;
 }
 .contmusic {
     display: flex;
@@ -43,11 +50,11 @@ p {
     margin: 0 auto;
     width: 1200px;
     text-align: center;
-   margin-top: 30px;
+    margin-top: 45px;
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 35px;
 }
 .sdot {
     width: 8px;
@@ -79,11 +86,33 @@ p {
     overflow: hidden;
     width: 210px;
     height: 210px;
-    /* display: flex;
-    justify-content: center; */
-    /* align-items: center; */
     position: relative;
     cursor: pointer;
+}
+.outbox > p:first-of-type{
+    margin-top: 20px;
+}
+.markOne::before{
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+.markOne::after{
+    content: "";
+    width: 0;
+    height: 0;
+}
+.markTwo::before{
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: transparent;
+}
+.markTwo::after{
+    content: "";
+    width: 0;
+    height: 0;
 }
 .mask {
     background-color: #33333322;
@@ -92,13 +121,13 @@ p {
     position: absolute;
     top: 0px;
     left: 0px;
-    transform: scale(1.05);
-    transition: all 0.25s;
+    transform: scale(1.1);
+    transition: all 0.15s;
     }
 .mask::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: -4px;
     right: 0;
     top: 0;
     bottom: 0;
@@ -107,7 +136,7 @@ p {
     height: 50px;
     background-color: aliceblue;
     border-radius: 50%;
-    transition: all 0.25s;
+    transition: all 0.15s;
 }
 .mask::after {
     content: "";
@@ -122,8 +151,9 @@ p {
     border-left: 20px solid rgba(0, 0, 0, 0.507);
     width: 0;
     height: 0;
-    transition: all 0.25s;
+    transition: all 0.15s;
 }
+
 .tranOne {
     width: 1200px;
     overflow: hidden;
@@ -221,9 +251,9 @@ p {
     transition: all 0s;
 }
 .scare {
-    transform: scale(1.05);
+    transform: scale(1.08);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 .tranTwo {
     margin: 0 auto;
@@ -271,8 +301,8 @@ p {
 }
 .guidelogo {
     position: absolute;
-    width: 100px;
-    height: 28px;
+    width: 120px;
+    height: 32px;
     display: inline-block;
     background-color: transparent;
     border: 1px solid rgba(0, 0, 0, 0.311);
@@ -289,8 +319,8 @@ p {
     width: 15px;
     height: 2px;
     background-color: #3333336d;
-    top: 6px;
-    left: 10px;
+    top: 8px;
+    left: 21px;
     transform: rotate(30deg);
 }
 .guidelogo::before {
@@ -299,8 +329,8 @@ p {
     width: 15px;
     height: 2px;
     background-color: #3333336d;
-    top: 18px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     transform: rotate(-30deg);
 }
 .guideTwo::before {
@@ -309,15 +339,15 @@ p {
     width: 15px;
     height: 2px;
     background-color: #3333336d;
-    top: 10px;
-    left: 5px;
+    top: 13px;
+    left: 15px;
     transform: rotate(90deg);
 }
 .guidelogo::after {
     content: "播放全部";
     position: absolute;
-    top: 5px;
-    left: 30px;
+    top: 7px;
+    left: 40px;
     cursor: pointer;
 }
 .fbox {
@@ -342,12 +372,12 @@ p {
     top: 0px;
     left: 0px;
     transform: scale(1.05);
-    transition: all 0.25s;
+    transition: all 0.15s;
     }
 .maskTwo::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: -2px;
     right: 0;
     top: 0;
     bottom: 0;
@@ -356,7 +386,7 @@ p {
     height: 20px;
     background-color: aliceblue;
     border-radius: 50%;
-    transition: all 0.25s;
+    transition: all 0.15s;
 }
 .maskTwo::after {
     content: "";
@@ -371,5 +401,5 @@ p {
     border-left: 8px solid rgba(0, 0, 0, 0.507);
     width: 0;
     height: 0;
-    transition: all 0.25s;
+    transition: all 0.15s;
 }
