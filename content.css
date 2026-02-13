@@ -1,0 +1,375 @@
+body {
+     font-family: Tahoma, Arial, \5FAE\8F6F\96C5\9ED1, sans-serif;
+}
+.contName {
+    width: 1200px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-family: poppin;
+    color: #333;
+}
+.contguide {
+    width: 1200px;
+    margin-bottom: 30px;
+}
+.contguide > a:first-of-type {
+    color: rgb(49, 194, 124);
+}
+.contguide > a {
+    font-size: 16px;
+}
+.contmusic {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    /* gap: 38px; */
+    position: relative;
+    height: 280px;
+    transition: all 0.4s;
+}
+.midtip {
+    margin: 0;
+}
+p {
+    margin: 5px 0 5px 0;
+}
+.views {
+    font-size: 12px;
+    color: rgb(153,153,153);
+}
+.carouseldots {
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+   margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+.sdot {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    display: inline-block;
+    border-radius: 50%;
+    /* margin-right: 11px; */
+    cursor: pointer;
+}
+
+.sdot:hover {
+    background-color: rgb(155,155,155);
+    transition: all 0.1s;
+}
+.muscontentOne {
+    background: linear-gradient(to bottom, rgb(242,242,242) 0%, rgb(253,253,253) 50%,rgb(250,250,250) 100%);
+    position: relative;
+}
+.muscontentTwo {
+        background: linear-gradient(to bottom, rgb(242,242,242) 0%, rgb(253,253,253) 100%);
+        position: relative;
+}
+.outbox {
+    width: 210px;
+    /* height: 250px; */
+}
+.innerbox {
+    overflow: hidden;
+    width: 210px;
+    height: 210px;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+    position: relative;
+    cursor: pointer;
+}
+.mask {
+    background-color: #33333322;
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: scale(1.05);
+    transition: all 0.25s;
+    }
+.mask::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    transition: all 0.25s;
+}
+.mask::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid rgba(0, 0, 0, 0.507);
+    width: 0;
+    height: 0;
+    transition: all 0.25s;
+}
+.tranOne {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.contmusicOne {
+    flex-wrap: wrap;
+    width: 1200px;
+    gap: 37px;
+
+    flex-shrink: 0;
+}
+.left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 79px;
+    height: 108px;
+    background-color: rgb(236, 236, 236);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.left::before{
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: rgba(114, 114, 114);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transform: rotate(45deg);
+    bottom: -27px;
+    left: 15px;
+}
+.left::after{
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: rgba(114, 114, 114);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transform: rotate(-45deg);
+    top: -27px;
+    left: 15px;
+}
+.left:hover {
+    background-color: rgb(225,225,225);
+    transition: all 0s;
+}
+.right {
+    width: 79px;
+    height: 108px;
+    background-color: rgb(236, 236, 236);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.right::before {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: rgba(114, 114, 114);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transform: rotate(-45deg);
+    bottom: -27px;
+    right: 15px;
+}
+.right::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: rgba(114, 114, 114);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transform: rotate(45deg);
+    top: -27px;
+    right: 15px;
+}
+.right:hover {
+    background-color: rgb(225,225,225);
+    transition: all 0s;
+}
+.scare {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+.tranTwo {
+    margin: 0 auto;
+    width: 1200px;
+    overflow: hidden;
+    height: 318px;
+}
+.contmusicTwo {
+    flex-wrap: wrap;
+    width: 1200px;
+    gap: 30px;
+    height: 318px;
+    flex-shrink: 0;
+}
+
+.divp {
+    width: 200px;
+}
+.outboxTwo {
+    height: 86px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.divp p:nth-child(2):hover {
+    color: rgb(49, 194, 124);
+}
+.dotTwo {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    display: inline-block;
+    border-radius: 50%;
+    /* margin-right: 11px; */
+    cursor: pointer;
+}
+.chageColor {
+    background-color: rgb(155,155,155);
+}
+.guideTwo {
+    position: relative;
+    margin-bottom: 38px;
+}
+.guidelogo {
+    position: absolute;
+    width: 100px;
+    height: 28px;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.311);
+    left: 0px;
+    top: -5px;
+    cursor: pointer;
+}
+.guidelogo:hover {
+    background-color: #3333330a;
+}
+.guideTwo::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #3333336d;
+    top: 6px;
+    left: 10px;
+    transform: rotate(30deg);
+}
+.guidelogo::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #3333336d;
+    top: 18px;
+    left: 10px;
+    transform: rotate(-30deg);
+}
+.guideTwo::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #3333336d;
+    top: 10px;
+    left: 5px;
+    transform: rotate(90deg);
+}
+.guidelogo::after {
+    content: "播放全部";
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    cursor: pointer;
+}
+.fbox {
+    height: 318px;
+    /* width: 1200px; */
+    display: flex;
+    flex-direction: row;
+    /* transform: translateX(-1200px); */
+    transition: all 0.4s;
+}
+.innerboxTwo {
+    position: relative;
+    width: 86px;
+    height: 89px;
+    overflow: hidden;
+}
+.maskTwo {
+    background-color: #33333322;
+    width: 86px;
+    height: 86px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: scale(1.05);
+    transition: all 0.25s;
+    }
+.maskTwo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    transition: all 0.25s;
+}
+.maskTwo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid rgba(0, 0, 0, 0.507);
+    width: 0;
+    height: 0;
+    transition: all 0.25s;
+}

@@ -1,0 +1,168 @@
+body {
+    margin:0;
+    font-size: 14px;
+    padding: 0;
+}
+.theUnaualrule {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.nav {
+    flex-direction: column;
+    height: 142px;
+    gap: 16px;
+}
+.Center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.navlogo {
+    width: 170px;
+    height: 90px;
+    cursor: pointer;
+}
+.navdot {
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    background-color: rgb(49, 194, 124);
+    color: rgb(255,255,255);
+    font-size: 18px;
+}
+.guidecontent {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    margin-right: 30px;
+}
+.navguideOne {
+    width: 360px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+#serch {
+    width: 230px;
+}
+#serch {
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.serch {
+    height: 90px;
+}
+.ser {
+    width: 230px;
+    height: 34px;
+    border: 1px solid rgb(201,201,201);
+}
+.navbuttom {
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+.navbuttom::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid rgb(88,88,88);
+    top: 17%;
+    left: 17%;
+    display: inline-block;
+    cursor: pointer;
+}
+.navbuttom::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background-color: rgb(88,88,88);
+    bottom: 20%;
+    right: 0%;
+    transform: rotate(45deg);
+    display: inline-block;
+    cursor: pointer;
+}
+.logpage {
+    width: 296px;
+    height: 90px;
+}
+.dl {
+    margin: 0 10px;
+    font-size: 16px;
+}
+#VIP {
+    width: 122px;
+    height: 40px;
+    border-radius: 5%;
+    background-color: rgb(49,194,124);
+    font-size: 12px;
+    color: aliceblue;
+    position: relative;
+}
+#VIP::after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-right: 0px;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 5px solid aliceblue;
+    position: absolute;
+    right: 7px;
+}
+#CZ {
+    width: 80px;
+    height: 40px;
+    border: 1px rgba(0, 0, 0, 0.406) solid;
+    font-size: 14px;
+    position: relative;
+    margin-right: 0;
+}
+#CZ::after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-right: 0px;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 5px solid rgba(0, 0, 0, 0.686);
+    position: absolute;
+    right: 4px;
+}
+.nav_contentOne {
+    gap: 14px;
+    border-bottom: 1.5px solid rgb(242,242,242);
+}
+
+.guideBottom {
+    margin-right: 55px;
+    font-size: 14px;
+}
+.guidecontent:hover {
+    color: rgb(49, 194, 124);
+    transition: all 0.1s;
+}
+ .navbuttom:hover::after {
+    background-color: rgb(49, 194, 124);
+    transition: all 0.1s;
+ }
+ .navbuttom:hover::before {
+    border-color: rgb(49, 194, 124);
+    transition: all 0.1s;
+ }
+ #CZ:hover {
+    color: rgb(255,255,255);
+    background-color: rgb(49, 194, 124);
+    border: 1px transparent solid;
+    transition: all 0.1s;
+ }
