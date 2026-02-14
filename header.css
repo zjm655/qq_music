@@ -166,3 +166,180 @@ body {
     border: 1px transparent solid;
     transition: all 0.1s;
  }
+
+ /* 后面补充的样式 */
+ .vip {
+    position: relative;
+ }
+ .ulaa {
+    position: absolute;
+    list-style: none;
+    left: 11px;
+    margin-top: 0px;
+    cursor: pointer;
+    display: none;
+    border-radius: 5%;
+    box-sizing: border-box;
+    padding: 0;
+ }
+ .liaa {
+    list-style: none;
+    width: 122px;
+    height: 38px;
+    /* background-color: rgb(49, 194, 124); */
+    box-sizing: border-box;
+    border: 1px black solid;
+    border: 1px solid #c9c9c9;
+    font-size: 13px;
+    line-height: 38px;
+    text-align: center;
+ }
+ .vip:hover #VIP::after {
+    border-top: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid aliceblue;
+ }
+ .vip:hover .ulaa {
+    display: block;
+ }
+ .liaa:hover {
+    background-color: rgb(49, 194, 124);
+    border: none;
+    color: #fff;
+ }
+ .liOne {
+    border-top: none;
+    border-bottom: none;
+ }
+ .liTwo:hover {
+    height: 38px;
+ }
+ .cz {
+    position: relative;
+ }
+ .cz:hover #CZ::after {
+    border-top: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid aliceblue;
+ }
+ .cz:hover .ulaa {
+    display: block;
+ }
+ .cz li {
+    width: 83px;
+ }
+ .ulaa:hover + #CZ::after {
+    border-bottom: 5px solid rgba(0, 0, 0, 0.686);;
+ }
+ .cz > ul {
+    left: 10px;
+    margin-top: 42px;
+ }
+ 
+ .cz li:nth-child(2):hover + .piao {
+    opacity: 1;
+ }
+.piao{
+    top: 38px;
+    left: 82px;
+    position: absolute;
+    border: 1px solid #c9c9c9;
+    border-left: none;
+    opacity: 0;
+ }
+ .piao:hover {
+    opacity: 1;
+ }
+ #khd {
+    position: relative;
+ }
+ #khd > img {
+    position: absolute;
+    width: 32px;
+    right: 15px;
+    top: -10px;
+ }
+ .jlphoto {
+    background-color: transparent;
+    height: 190px;
+    width: 160px;
+     position: absolute;
+     z-index: 2;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     top: 20px;
+     left: 0px;
+     display: none;
+ }
+ .contbox {
+        background-color: #fff;
+    height: 160px;
+    width: 160px;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     border-radius: 7px;
+     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.356);
+ }
+ .jlphoto:hover {
+    display: flex;
+ }
+ #khd:hover .jlphoto {
+    display: flex;
+ }
+ .Ii {
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 140px;
+    height: 120px;
+    flex-direction: column;
+ }
+ .Ii > p {
+    display: flex;
+    width: 140px;
+    height: 25px;
+    font-size: 12px;
+    text-align: center;
+    /* justify-content: center; */
+    gap: 10px;
+    align-items: center;
+ }
+ .Ii i {
+    margin-left: 10px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url(./theContentphotos/photos/tub.png);
+    line-height: 25px;
+ }
+ .Ii p:nth-child(1) > i {
+    background-position: 0 0;
+ }
+ .Ii p:nth-child(2) > i {
+    background-position: 0 -30px;
+ }
+ .Ii p:nth-child(3) > i {
+    background-position: 0 -60px;
+ }
+ .downLoad {
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+    background-color: rgb(49, 194, 124);
+    border-radius: 15px;
+    color: #fff;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    cursor: pointer;
+ }
+ .downLoad:hover {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.525);
+ }
