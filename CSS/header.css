@@ -317,7 +317,7 @@ body {
     display: inline-block;
     width: 14px;
     height: 14px;
-    background-image: url(./theContentphotos/photos/tub.png);
+    background-image: url(../theContentphotos/photos/tub.png);
     line-height: 25px;
  }
  .Ii p:nth-child(1) > i {
