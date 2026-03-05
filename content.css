@@ -38,6 +38,7 @@ h2 {
 }
 .midtip {
     margin: 0;
+    font-size: 13px;
 }
 p {
     margin: 5px 0 5px 0;
@@ -45,6 +46,7 @@ p {
 .views {
     font-size: 12px;
     color: rgb(153,153,153);
+    display: inline-block;
 }
 .carouseldots {
     margin: 0 auto;
@@ -90,7 +92,7 @@ p {
     cursor: pointer;
 }
 .outbox > p:first-of-type{
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .markOne::before{
     content: "";

@@ -102,10 +102,10 @@ const dateGodownTwo = [
 
 function divStringTwo(dateGodownTwo){
     let carouselDiv="";
-    for(let i=0;i<9;i++){
+    for(let i=0;i<dateGodownTwo.length;i++){
         carouselDiv += `
 <div class="contmusicTwo Center">`;
-        for(let j=0;j<9;j++){
+        for(let j=0;j<dateGodownTwo[i].length;j++){
             carouselDiv += 
 `<div class="outboxTwo">
     <div class="innerboxTwo">

@@ -54,11 +54,11 @@
     gap: 44px;
 }
 .httper p {
-    font-size: 14px;
+    font-size: 13px;
 }
 .httper a:hover {
     color: rgb(49, 194, 124);
-    transform: translateY(-1px);
+    /* transform: translateY(-1px); */
 }
 .hbox {
     display: flex;
@@ -116,4 +116,34 @@
 }
 .Row > a:hover {
     color: rgb(49, 194, 124);
+}
+.footlogo {
+    display: inline-block;
+    width: 48px;
+    height: 50px;
+    background-image: url(./theContentphotos/photos/footLogo.png);
+}
+.fLogo1 {
+    background-position: -1px 0;
+}
+.fLogo2 {
+    background-position: -92px 0;
+}
+.fLogo3 {
+    background-position: -185px 0;
+}
+.fLogo4 {
+    background-position: -272px 0;
+}
+.fLogo5 {
+    background-position: -366px 0;
+}
+.fLogo6 {
+    background-position: -457px 0;
+}
+.fLogo7 {
+    background-position: -556px 0;
+}
+.fLogo8 {
+    background-position: -648px 0;
 }

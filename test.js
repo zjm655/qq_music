@@ -1,35 +1,69 @@
-    function Carousel(spanDots,imgin,dir_right,dir_left,cover){
+    class Carousel {
+        constructor(spanDots, imgin, dir_right, dir_left) {
         this.index=0;
         this.dots=document.getElementsByClassName(spanDots);
         this.img=document.getElementsByClassName(imgin)[0];
         this.right=document.getElementById(dir_right);
         this.left=document.getElementById(dir_left);
-        this.mask=document.getElementsByClassName(cover);
         this.disp=this.img.parentElement.offsetWidth;
+        }
+        chagePage(num, class_name) {
+            this.disp = this.img.parentElement.offsetWidth;
+            this.dots[this.index].className = class_name;
+            this.dots[num].className = class_name + " chageColor";
+            this.index = num;
+            this.img.style = "transform:translateX("+(-this.index*this.disp)+"px)";           
+        }
+        clickPage(class_name) {
+            // this.dots[num].onclick = () => {this.chagePage(num,class_name);}
+            this.dots[0].parentElement.onclick = (e) => {
+                const eve = e.target.closest(`.${class_name}`);
+                let num = 0;
+                for(; num < this.dots.length; num++)if(this.dots[num] === eve)break;
+                // console.log("num = " + num)
+                if(eve && num < this.dots.length) {
+                    this.chagePage(num,class_name);
+                }
+            } 
+        }
+        skipLeft(dotName) {
+            this.left.onclick = () => this.chagePage((this.index+this.dots.length-1)%this.dots.length,dotName);
+        }
+        skipRight(dotName) {
+            this.right.onclick = () => this.chagePage((this.index+1)%this.dots.length,dotName);
+        }
+        passAge(style,mark,class_name) {
+            this.img.addEventListener('mouseover',
+                (e) => {
+                    const eve = e.target.closest(`.${class_name}`);
+                    if(eve) {
+                        eve.lastElementChild.className=style+" "+mark;
+                        eve.lastElementChild.previousElementSibling.className="scare";
+                    }
+                }
+            )
+            this.img.addEventListener('mouseout',
+                (e) => {
+                    const eve = e.target.closest(`.${class_name}`);
+                    if(eve) {
+                        eve.lastElementChild.className=mark;
+                        eve.lastElementChild.previousElementSibling.className="";                      
+                    }
+                }
+            )
+        }
     }
 
-    let carouselOne=new Carousel("sdot","contmusic","right1","left1","markOne");
-    let carouselTwo=new Carousel("dotTwo","fbox","right2","left2","markTwo");
+    let carouselOne=new Carousel("sdot","contmusic","right1","left1");
+    let carouselTwo=new Carousel("dotTwo","fbox","right2","left2");
+
+    let footLogoOne = document.querySelectorAll(`.http`)[0];
+    let footLogoTwo = document.querySelectorAll(`.http`)[2];
 
     let contenttop=document.getElementsByClassName("muscontentOne");
     let contentbottom=document.getElementsByClassName("muscontentTwo");
-
-    function pageChage(num,carousel,class_name){
-        carousel.disp=carousel.img.parentElement.offsetWidth;
-        carousel.dots[carousel.index].className=class_name;
-        carousel.dots[num].className=class_name+" chageColor";
-        carousel.index=num;
-        carousel.img.style="transform:translateX("+(-carousel.index*carousel.disp)+"px)"
-    }
-    function pageClick(num,carousel,class_name){
-        carousel.dots[num].onclick=function(){pageChage(num,carousel,class_name);}
-    }
-    function skipRight(carousel,dotName){
-        carousel.right.onclick=function(){pageChage((carousel.index+1)%carousel.dots.length,carousel,dotName);}
-    }
-    function skipLeft(carousel,dotName){
-        carousel.left.onclick=function(){pageChage((carousel.index+carousel.dots.length-1)%carousel.dots.length,carousel,dotName);}
-    }
+    // let canshuX = -100;
+    const reg = /-\d+px/;
     function seen(content,carousel){
         content[0].addEventListener('mouseenter',
             function(){
@@ -46,31 +80,50 @@
         }
         )
     }
-    function passage(carousel,style,mark){
-        for(let i=0;i<carousel.mask.length;i++){
-            carousel.mask[i].parentElement.addEventListener('mouseenter',
-                function(){
-                    carousel.mask[i].className=style+" "+mark;
-                    carousel.mask[i].previousElementSibling.className="scare";
+    function logoPostion(footLogo) {
+        footLogo.addEventListener("mouseover", 
+            e => {
+                const eve = e.target.closest(`a`);
+                if(eve && eve.id === "") {
+                    const data = getComputedStyle(eve.querySelector(`.footlogo`));
+                    const str = data.backgroundPosition;
+                    const styleCSS = reg.exec(str)[0].replace("px","");
+                    const num = Number(styleCSS);
+                    eve.querySelector(`.footlogo`).style = `background-position: ${num}px -49px`;
                 }
-            )
-            carousel.mask[i].parentElement.addEventListener('mouseleave',
-                function(){
-                    carousel.mask[i].className=mark;
-                    carousel.mask[i].previousElementSibling.className="";
+            }
+        )
+        footLogo.addEventListener("mouseout",
+            e => {
+                const eve = e.target.closest(`a`);
+                if(eve &&eve.id === "") {
+                    const data = getComputedStyle(eve.querySelector(`.footlogo`));
+                    const str = data.backgroundPosition;
+                    const styleCSS = reg.exec(str)[0].replace("px","");
+                    const num = Number(styleCSS);
+                    eve.querySelector(`.footlogo`).style = `background-position: ${num}px 0px`;
                 }
-            )
-        }
+            }
+        )
     }
-    for(let i=0;i<carouselOne.dots.length;i++)pageClick(i,carouselOne,"sdot");
-    for(let i=0;i<carouselTwo.dots.length;i++)pageClick(i,carouselTwo,"dotTwo");
-    skipRight(carouselOne,"sdot");
-    skipRight(carouselTwo,"dotTwo");
-    skipLeft(carouselOne,"sdot");
-    skipLeft(carouselTwo,"dotTwo");
+    logoPostion(footLogoOne);
+    logoPostion(footLogoTwo);
+    // for(let i=0;i<carouselOne.dots.length;i++)carouselOne.clickPage(i,"sdot");
+    // for(let i=0;i<carouselTwo.dots.length;i++)carouselTwo.clickPage(i,"dotTwo");
+    carouselOne.clickPage("sdot");
+    carouselTwo.clickPage("dotTwo");
+
+    carouselOne.skipLeft("sdot");
+    carouselOne.skipRight("sdot");
+
+    carouselTwo.skipLeft("dotTwo");
+    carouselTwo.skipRight("dotTwo");
+
     seen(contenttop,carouselOne);
     seen(contentbottom,carouselTwo);
+
     leave(contenttop,carouselOne);
     leave(contentbottom,carouselTwo);
-    passage(carouselOne,"mask","markOne");
-    passage(carouselTwo,"maskTwo","markTwo");
+
+    carouselOne.passAge("mask","markOne","innerbox");
+    carouselTwo.passAge("maskTwo","markTwo","innerboxTwo");

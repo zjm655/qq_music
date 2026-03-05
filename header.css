@@ -67,6 +67,7 @@ body {
     height: 30px;
     position: relative;
     cursor: pointer;
+    font-size: 0px;
 }
 .navbuttom::before {
     content: "";
@@ -86,7 +87,7 @@ body {
     width: 10px;
     height: 2px;
     background-color: rgb(88,88,88);
-    bottom: 20%;
+    bottom: 16%;
     right: 0%;
     transform: rotate(45deg);
     display: inline-block;
