@@ -108,7 +108,7 @@ p {
     top: 0px;
     left: 0px;
     transform: scale(1.05);
-    transition: all -1s;
+    transition: all 0.2s;
 }
 .mask {
     width: 210px;
