@@ -147,3 +147,7 @@
 .fLogo8 {
     background-position: -648px 0;
 }
+.fLogo6:hover,
+.fLogo7:hover {
+    transform: translateY(0.5px);
+}

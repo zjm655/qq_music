@@ -58,17 +58,16 @@ p {
     gap: 15px;
     padding-bottom: 35px;
 }
-.sdot {
+.sdot,
+.dotTwo {
     width: 8px;
     height: 8px;
     background-color: #ccc;
     display: inline-block;
     border-radius: 50%;
-    /* margin-right: 11px; */
     cursor: pointer;
 }
-
-.sdot:hover {
+.sdot:hover,.dotTwo:hover {
     background-color: rgb(155,155,155);
     transition: all 0.1s;
 }
@@ -82,7 +81,6 @@ p {
 }
 .outbox {
     width: 210px;
-    /* height: 250px; */
 }
 .innerbox {
     overflow: hidden;
@@ -94,47 +92,42 @@ p {
 .outbox > p:first-of-type{
     margin-top: 15px;
 }
-.markOne::before{
-    content: "";
-    width: 0;
-    height: 0;
-    background-color: transparent;
-}
-.markOne::after{
-    content: "";
-    width: 0;
-    height: 0;
-}
-.markTwo::before{
-    content: "";
-    width: 0;
-    height: 0;
-    background-color: transparent;
-}
-.markTwo::after{
+.markOne::before, 
+.markOne::after,
+.markTwo::before, 
+.markTwo::after {
     content: "";
     width: 0;
     height: 0;
 }
-.mask {
-    background-color: rgba(1, 1, 1, 0.1);
+.mask,
+.maskTwo {
+    background-color: rgba(1, 1, 1, 0.16);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 210px;
-    height: 210px;
     position: absolute;
     top: 0px;
     left: 0px;
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all -1s;
+}
+.mask {
+    width: 210px;
+    height: 210px;
     }
-.mask::before {
+.mask::after,
+.markOne::before,
+.maskTwo::before,
+.maskTwo::after {
     content: "";
     position: absolute;
-    left: -4px;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
+
+}
+.mask::before {
+    left: -4px;
     width: 50px;
     height: 50px;
     background-color: aliceblue;
@@ -142,13 +135,7 @@ p {
     transition: all 0.2s;
 }
 .mask::after {
-    content: "";
-    position: absolute;
     left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
     border-left: 20px solid rgba(0, 0, 0, 0.514);
@@ -157,101 +144,78 @@ p {
     transition: all 0.05s;
 }
 
-.tranOne {
+.tranOne,
+.tranTwo {
     width: 1200px;
     overflow: hidden;
     margin: 0 auto;
 }
-.contmusicOne {
+.contmusicOne,.contmusicTwo {
     flex-wrap: wrap;
     width: 1200px;
     gap: 37px;
-
     flex-shrink: 0;
 }
-.left {
+.left,
+.right {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    /* left: 0; */
     margin: auto;
+    cursor: pointer;
     width: 79px;
     height: 108px;
     background-color: rgb(236, 236, 236);
-    cursor: pointer;
     transition: all 0.3s;
 }
-.left::before{
+.left {
+    left: 0;
+}
+.left::before,
+.left::after,
+.right::before,
+.right::after {
     content: "";
     width: 40px;
     height: 3px;
-    background-color: rgba(114, 114, 114);
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto 0;
+
+}
+.left::before{
+    background-color: rgba(114, 114, 114);
     transform: rotate(45deg);
     bottom: -27px;
     left: 15px;
 }
 .left::after{
-    content: "";
-    width: 40px;
-    height: 3px;
     background-color: rgba(114, 114, 114);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
     transform: rotate(-45deg);
     top: -27px;
     left: 15px;
 }
-.left:hover {
+.left:hover,
+.right:hover {
     background-color: rgb(225,225,225);
     transition: all 0s;
 }
 .right {
-    width: 79px;
-    height: 108px;
-    background-color: rgb(236, 236, 236);
     right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.3s;
 }
 .right::before {
-    content: "";
-    width: 40px;
-    height: 3px;
     background-color: rgba(114, 114, 114);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
     transform: rotate(-45deg);
     bottom: -27px;
     right: 15px;
 }
 .right::after {
-    content: "";
-    width: 40px;
-    height: 3px;
     background-color: rgba(114, 114, 114);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
     transform: rotate(45deg);
     top: -27px;
     right: 15px;
-}
-.right:hover {
-    background-color: rgb(225,225,225);
-    transition: all 0s;
 }
 .scare {
     transform: scale(1.08);
@@ -259,17 +223,11 @@ p {
     transition: all 0.5s;
 }
 .tranTwo {
-    margin: 0 auto;
-    width: 1200px;
-    overflow: hidden;
     height: 318px;
 }
 .contmusicTwo {
-    flex-wrap: wrap;
-    width: 1200px;
     gap: 30px;
     height: 318px;
-    flex-shrink: 0;
 }
 
 .divp {
@@ -285,15 +243,6 @@ p {
 }
 .divp p:nth-child(2):hover {
     color: rgb(49, 194, 124);
-}
-.dotTwo {
-    width: 8px;
-    height: 8px;
-    background-color: #ccc;
-    display: inline-block;
-    border-radius: 50%;
-    /* margin-right: 11px; */
-    cursor: pointer;
 }
 .chageColor {
     background-color: rgb(155,155,155);
@@ -316,32 +265,26 @@ p {
 .guidelogo:hover {
     background-color: #3333330a;
 }
+.guidelogo::before,
+.guideTwo::before,
 .guideTwo::after {
     position: absolute;
     content: "";
     width: 15px;
     height: 2px;
     background-color: #3333336d;
+}
+.guideTwo::after {
     top: 8px;
     left: 21px;
     transform: rotate(30deg);
 }
 .guidelogo::before {
-    position: absolute;
-    content: "";
-    width: 15px;
-    height: 2px;
-    background-color: #3333336d;
     top: 20px;
     left: 20px;
     transform: rotate(-30deg);
 }
 .guideTwo::before {
-    position: absolute;
-    content: "";
-    width: 15px;
-    height: 2px;
-    background-color: #3333336d;
     top: 13px;
     left: 15px;
     transform: rotate(90deg);
@@ -355,10 +298,8 @@ p {
 }
 .fbox {
     height: 318px;
-    /* width: 1200px; */
     display: flex;
     flex-direction: row;
-    /* transform: translateX(-1200px); */
     transition: all 0.4s;
 }
 .innerboxTwo {
@@ -368,24 +309,11 @@ p {
     overflow: hidden;
 }
 .maskTwo {
-    background-color: rgba(1, 1, 1, 0.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 86px;
     height: 86px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    transform: scale(1.05);
-    transition: all -1s;
     }
 .maskTwo::before {
-    content: "";
-    position: absolute;
     left: -2px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
     width: 20px;
     height: 20px;
     background-color: aliceblue;
@@ -393,13 +321,7 @@ p {
     transition: all 0.20s;
 }
 .maskTwo::after {
-    content: "";
-    position: absolute;
     left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 8px solid rgba(0, 0, 0, 0.507);
