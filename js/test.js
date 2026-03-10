@@ -27,10 +27,14 @@
             } 
         }
         skipLeft(dotName) {
-            this.left.onclick = () => this.chagePage((this.index+this.dots.length-1)%this.dots.length,dotName);
+            this.left.onclick = fangDou(50, () => {
+                this.chagePage((this.index+this.dots.length-1)%this.dots.length,dotName)
+            });
         }
         skipRight(dotName) {
-            this.right.onclick = () => this.chagePage((this.index+1)%this.dots.length,dotName);
+            this.right.onclick = fangDou(50, () => {
+                this.chagePage((this.index+1)%this.dots.length,dotName)
+            });
         }
         passAge(style,mark,class_name) {
             this.img.addEventListener('mouseover',
@@ -64,6 +68,13 @@
     let contentbottom=document.getElementsByClassName("muscontentTwo");
     // let canshuX = -100;
     const reg = /-\d+px/;
+    function fangDou(time, fun){
+        let idTime = null;
+        return () => {
+            if(idTime != null)clearTimeout(idTime);
+            idTime = setTimeout(fun,time);
+        }
+    }
     function seen(content,carousel){
         content[0].addEventListener('mouseenter',
             function(){
@@ -80,34 +91,6 @@
         }
         )
     }
-    function logoPostion(footLogo) {
-        footLogo.addEventListener("mouseover", 
-            e => {
-                const eve = e.target.closest(`a`);
-                if(eve && eve.id === "") {
-                    const data = getComputedStyle(eve.querySelector(`.footlogo`));
-                    const str = data.backgroundPosition;
-                    const styleCSS = reg.exec(str)[0].replace("px","");
-                    const num = Number(styleCSS);
-                    eve.querySelector(`.footlogo`).style = `background-position: ${num}px -49px`;
-                }
-            }
-        )
-        footLogo.addEventListener("mouseout",
-            e => {
-                const eve = e.target.closest(`a`);
-                if(eve &&eve.id === "") {
-                    const data = getComputedStyle(eve.querySelector(`.footlogo`));
-                    const str = data.backgroundPosition;
-                    const styleCSS = reg.exec(str)[0].replace("px","");
-                    const num = Number(styleCSS);
-                    eve.querySelector(`.footlogo`).style = `background-position: ${num}px 0px`;
-                }
-            }
-        )
-    }
-    logoPostion(footLogoOne);
-    logoPostion(footLogoTwo);
     // for(let i=0;i<carouselOne.dots.length;i++)carouselOne.clickPage(i,"sdot");
     // for(let i=0;i<carouselTwo.dots.length;i++)carouselTwo.clickPage(i,"dotTwo");
     carouselOne.clickPage("sdot");
