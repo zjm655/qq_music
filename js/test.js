@@ -18,6 +18,7 @@
             this.index = num;
             this.img.style = "transform:translateX("+(-this.index*this.disp)+"px)";           
         }
+
         //clickPage封装了chagePage，对点击轮播点切图进行了事件委托
         clickPage(class_name) {
             this.dots[0].parentElement.onclick = (e) => {
@@ -29,10 +30,12 @@
                 }
             } 
         }
+        
         //skipLeft与skipRight也是封装了chagePage，因为点击左右箭头相当于点击当前索引的下一个或者上一个轮播点
-        //同时两者采用了防抖，以防连点器，虽然作用不大
+        //同时两者采用了防抖，对于应对连点器有一定作用，虽然作用不大
         //skipLeft是左箭头对应的方法
         skipLeft(dotName) {
+            //50，代表50ms，若在50ms内点击了多次，只要最后那次会得到相应
             this.left.onclick = fangDou(50, () => {
                 this.chagePage((this.index+this.dots.length-1)%this.dots.length,dotName)    //通过取余实现循环
             });
@@ -43,30 +46,6 @@
                 this.chagePage((this.index+1)%this.dots.length,dotName)                     //取余实现循环
             });
         }
-        //passAge用于光标悬浮在图片上的时候
-        //效果相当于给图片添加一个透光的灰色遮罩，同时添加一个播放箭头以及放大照片
-        //它的实现是通过类名的增删,方式非常混乱，想改成opacity来切换来着，但老是忘了
-        //它使用了事件委托
-        passAge(style,mark,class_name) {
-            this.img.addEventListener('mouseover',
-                (e) => {
-                    const eve = e.target.closest(`.${class_name}`);
-                    if(eve) {
-                        eve.lastElementChild.className=style+" "+mark;
-                        eve.lastElementChild.previousElementSibling.className="scare";
-                    }
-                }
-            )
-            this.img.addEventListener('mouseout',
-                (e) => {
-                    const eve = e.target.closest(`.${class_name}`);
-                    if(eve) {
-                        eve.lastElementChild.className=mark;
-                        eve.lastElementChild.previousElementSibling.className="";                      
-                    }
-                }
-            )
-        }
     }
 
     let carouselOne=new Carousel("sdot","contmusic","right1","left1");     //这是上方歌单推荐部分的轮播器的实例化
@@ -74,6 +53,7 @@
 
     let contenttop=document.getElementsByClassName("muscontentOne");        //获取歌单推荐部分的DOM节点
     let contentbottom=document.getElementsByClassName("muscontentTwo");     //获取新歌首发的节点
+
     //防抖函数，用于练习闭包知识点        
     function fangDou(time, fun){
         let idTime = null;
@@ -83,19 +63,14 @@
         }
     }
     
-    //下面就是各种监听与委托的布置
+    //下面是各种监听与委托的布置
 
-    //这是轮播点的点击监听
+    //这是轮播点的点击事件的事件委托
     carouselOne.clickPage("sdot");
     carouselTwo.clickPage("dotTwo");
 
-    //下面是左右箭头的箭头
+    //下面是左右箭头的箭头的事件监听
     carouselOne.skipLeft("sdot");
     carouselOne.skipRight("sdot");
-
     carouselTwo.skipLeft("dotTwo");
     carouselTwo.skipRight("dotTwo");
-
-    //下面是光标悬浮与图片上的监听
-    carouselOne.passAge("mask","markOne","innerbox");
-    carouselTwo.passAge("maskTwo","markTwo","innerboxTwo");

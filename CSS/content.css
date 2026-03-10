@@ -114,7 +114,24 @@ p {
 .mask {
     width: 210px;
     height: 210px;
+    opacity: 0;
     }
+.mask::after {
+    border-top: 3.6px solid transparent;
+    border-bottom: 3.6px solid transparent;
+    border-left: 6.0px solid rgba(0, 0, 0, 0.514);
+}
+.innerbox:hover .mask,
+.innerboxTwo:hover .maskTwo {
+    opacity: 1;
+    transition: all 0.5s ease 50ms;
+}
+.innerbox:hover img,
+.innerboxTwo:hover img {
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.466);
+    transition: all 0.5s ease 50ms;
+}
 .mask::after,
 .markOne::before,
 .maskTwo::before,
@@ -125,24 +142,29 @@ p {
     top: 0;
     bottom: 0;
     margin: auto;
-
 }
 .mask::before {
-    left: -4px;
-    width: 50px;
-    height: 50px;
+    width: 4px;
+    height: 4px;
     background-color: aliceblue;
     border-radius: 50%;
-    transition: all 0.2s;
 }
-.mask::after {
+.mask:hover::before {
+    left: -4px;
+    width: 56px;
+    height: 56px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.6,0,15,0.7) 10ms;
+}
+.mask:hover::after {
     left: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-left: 20px solid rgba(0, 0, 0, 0.514);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid rgba(0, 0, 0, 0.514);
     width: 0;
     height: 0;
-    transition: all 0.05s;
+    transition: all 0.3s cubic-bezier(0.6,0,15,0.7) 10ms;
 }
 
 .tranOne,
@@ -319,24 +341,38 @@ p {
 .maskTwo {
     width: 86px;
     height: 86px;
+    opacity: 0;
     }
 .maskTwo::before {
-    left: -2px;
-    width: 20px;
-    height: 20px;
+    width: 5px;
+    height: 5px;
     background-color: aliceblue;
     border-radius: 50%;
-    transition: all 0.20s;
+    }
+.maskTwo:hover::before {
+    left: -2px;
+    width: 30px;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.6,0,15,0.7) 10ms;
 }
 .maskTwo::after {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 3.2px solid rgba(0, 0, 0, 0.507);
+}
+.maskTwo:hover::after {
     left: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 8px solid rgba(0, 0, 0, 0.507);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12.8px solid rgba(0, 0, 0, 0.507);
     width: 0;
     height: 0;
-    transition: all 0.05s;
+    transition: all 0.3s cubic-bezier(0.6,0,15,0.7) 10ms;
+
 }
+
 .backgroudOne {
     background: linear-gradient(to bottom, rgb(242, 242, 242) 0%, rgb(253, 253, 253) 50%, rgb(250, 250, 250) 100%);
     width: 1200px;

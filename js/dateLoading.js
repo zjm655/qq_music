@@ -57,7 +57,7 @@
 `   <div class="outbox">
         <div class="innerbox">
             <img src="${dateGodown[i][j].imgSrc}" loading="lazy" decoding="async" alt="cover" width="210px" height="210px">
-            <div class="markOne"></div>
+            <div class="markOne mask"></div>
         </div>
         <p><a href="" class="guidecontent guideBottom midtip">${dateGodown[i][j].title}</a></p>
         <p class="views">${dateGodown[i][j].viewCout}</p>

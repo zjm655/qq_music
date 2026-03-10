@@ -116,7 +116,7 @@ function divStringTwo(dateGodownTwo){
 `<div class="outboxTwo">
     <div class="innerboxTwo">
         <img src="${dateGodownTwo[i][j].imgSrc}" loading="lazy" decoding="async" alt="cover" width="86px" height="86px">
-        <div class="markTwo"></div>
+        <div class="markTwo maskTwo"></div>
     </div>
     <div class="divp">
         <p><a href="" class="guidecontent guideBottom midtip">${dateGodownTwo[i][j].title}</a></p>

@@ -52,6 +52,8 @@
 }
 .httper {
     gap: 44px;
+    margin: 0;
+    justify-content: left;
 }
 .httper p {
     font-size: 13px;
