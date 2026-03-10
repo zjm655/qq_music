@@ -1,3 +1,8 @@
+//下面是新歌首发部分的静态数据库
+//imgSrc是图片资源路劲
+//title是歌曲简介
+//author是作者
+//time是播放时长
 const dateGodownTwo = [
     [ 
         { imgSrc: "./theContentphotos/imgone/img_1/a11.webp", title: "罪《唐宫奇案之青雾凤鸣》电…", author: "GAI周延", time: "03:34" },
@@ -100,6 +105,7 @@ const dateGodownTwo = [
     ]
 ];
 
+//divStringTwo是新歌首发的渲染函数，也是把对应内容结合html标签平成一个大字符串，然后插入html里
 function divStringTwo(dateGodownTwo){
     let carouselDiv="";
     for(let i=0;i<dateGodownTwo.length;i++){
@@ -123,6 +129,7 @@ function divStringTwo(dateGodownTwo){
     }
     return carouselDiv;
 }
-
+//获取新歌首发部分的对象
 let res = document.getElementsByClassName("fbox")[0];
+//插入字符串
 res.innerHTML=divStringTwo(dateGodownTwo);

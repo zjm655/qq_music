@@ -1,4 +1,9 @@
+//之前重构时发现全写在html太长太难看了，就去网上查找精简的办法，了解到可以通过js配合静态数据渲染html重复内容的方法，于是模仿写了两个dataLoading的js文件
 
+        //下面是歌单推荐部分的静态数据
+        //imgSrc是存放图片资源的路径
+        //title是歌单的简介
+        //viewCout就不用多说了
         const dateGodown = [
             [
                 { imgSrc: "./theContentphotos/imgtwo_1/re1.png", title: "抖音伤感热播：我们还是走散了", viewCout: "播放量: 180.1万" },
@@ -41,6 +46,7 @@
             ]
         ];
 
+        //divString就是第一个静态数据库的渲染函数，使用双重循环，在js里把相应的内容拼成一个大的字符串，然后在后面通过DOM节点插入html
         function divString(dateGodown){
             let carouselDiv="";
             for(let i=0;i<dateGodown.length;i++){
@@ -63,5 +69,7 @@
             return carouselDiv;
         }
 
+        //获取轮播内容区
         let theHTML = document.getElementsByClassName("contmusic")[0];
+        //插入字符串
         theHTML.innerHTML = divString(dateGodown);
