@@ -75,6 +75,7 @@ p {
     background: linear-gradient(to bottom, rgb(242,242,242) 0%, rgb(253,253,253) 50%,rgb(250,250,250) 100%);
     position: relative;
 }
+
 .muscontentTwo {
         background: linear-gradient(to bottom, rgb(242,242,242) 0%, rgb(253,253,253) 100%);
         position: relative;
@@ -168,6 +169,13 @@ p {
     height: 108px;
     background-color: rgb(236, 236, 236);
     transition: all 0.3s;
+    opacity: 0;
+}
+.muscontentOne:hover #left1,
+.muscontentOne:hover #right1,
+.muscontentTwo:hover #left2,
+.muscontentTwo:hover #right2 {
+    opacity: 1;
 }
 .left {
     left: 0;

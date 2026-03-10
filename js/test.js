@@ -9,6 +9,7 @@
         this.left=document.getElementById(dir_left);            //获取左箭头
         this.disp=this.img.parentElement.offsetWidth;           //获取轮播区域的宽度，便于后面位移切换
         }
+
         //chagePage实现点击相应轮播点时切换相应内容
         chagePage(num, class_name) {
             this.disp = this.img.parentElement.offsetWidth;
@@ -42,8 +43,9 @@
                 this.chagePage((this.index+1)%this.dots.length,dotName)                     //取余实现循环
             });
         }
-        //passAge用于光标悬浮在图片上的时候，它的实现是通过类名的增删
+        //passAge用于光标悬浮在图片上的时候
         //效果相当于给图片添加一个透光的灰色遮罩，同时添加一个播放箭头以及放大照片
+        //它的实现是通过类名的增删,方式非常混乱，想改成opacity来切换来着，但老是忘了
         //它使用了事件委托
         passAge(style,mark,class_name) {
             this.img.addEventListener('mouseover',
@@ -67,7 +69,7 @@
         }
     }
 
-    let carouselOne=new Carousel("sdot","contmusic","right1","left1");     //这是上方歌单推荐部分的轮播器
+    let carouselOne=new Carousel("sdot","contmusic","right1","left1");     //这是上方歌单推荐部分的轮播器的实例化
     let carouselTwo=new Carousel("dotTwo","fbox","right2","left2");         //这是下方的新歌首发
 
     let contenttop=document.getElementsByClassName("muscontentOne");        //获取歌单推荐部分的DOM节点
@@ -80,39 +82,20 @@
             idTime = setTimeout(fun,time);
         }
     }
-    //seen与levea用于控制左右箭头的显隐，实现有些混乱，之前想改成dispaly来切换来着，但老是忘了
-    function seen(content,carousel){
-        content[0].addEventListener('mouseenter',
-            function(){
-            carousel.right.className="right";
-            carousel.left.className="left";
-        }
-        )
-    }
-    function leave(content,carousel){
-        content[0].addEventListener('mouseleave',
-            function(){
-            carousel.right.className="";
-            carousel.left.className="";
-        }
-        )
-    }
     
     //下面就是各种监听与委托的布置
+
+    //这是轮播点的点击监听
     carouselOne.clickPage("sdot");
     carouselTwo.clickPage("dotTwo");
 
+    //下面是左右箭头的箭头
     carouselOne.skipLeft("sdot");
     carouselOne.skipRight("sdot");
 
     carouselTwo.skipLeft("dotTwo");
     carouselTwo.skipRight("dotTwo");
 
-    seen(contenttop,carouselOne);
-    seen(contentbottom,carouselTwo);
-
-    leave(contenttop,carouselOne);
-    leave(contentbottom,carouselTwo);
-
+    //下面是光标悬浮与图片上的监听
     carouselOne.passAge("mask","markOne","innerbox");
     carouselTwo.passAge("maskTwo","markTwo","innerboxTwo");
